@@ -1,15 +1,16 @@
-const {Router} = require("express");
-const countriesHandler = require("../handlers/countriesHandler")
+const { Router } = require("express");
+const router = Router();
+const getCountriesHandler = require("../handlers/getCountriesHandler"); // Importa el controlador
+const getCountriesByIdHandler = require("../handlers/getCountriesByIdHandler")
+const getCountriesByNameHandler = require("../handlers/getCountriesByNameHandler")
 
-const router = Router()
 
-router.get("/getCountries", async (req, res) => {
 
-try {
-    const countries = await countriesHandler.getCountriesHandler()
-    res.status(200).json(countries)
-} catch (error) {
-    return error
-}
-}
-) 
+router.get("/allCountries", getCountriesHandler); // Pasa la función del controlador como referencia
+
+router.get("/name", getCountriesByNameHandler)
+
+router.get("/:idPais", getCountriesByIdHandler)
+
+
+module.exports = router; // Exporta solo el router
