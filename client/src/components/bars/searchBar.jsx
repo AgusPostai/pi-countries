@@ -1,19 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getCountriesByName } from "../../redux/actions";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = () => {
+  const dispatch = useDispatch();
+  const [name, setName] = useState("");
 
-   const [id, setId] = useState("");
+  const handleChange = (event) => {
+    setName(event.target.value);
+    dispatch(getCountriesByName(name));
+  };
 
-   const handleChange = (event) => {
-      setId(event.target.value)
-   };
-
-   return (
-      <div>
-         <input type='search' value={id} onChange={handleChange} />
-         <button onClick={()=> {onSearch(id)}}>Buscar</button>
-      </div>
-   );
+  return (
+    <div>
+      <input type="search" value={name} onChange={handleChange} />
+   
+    </div>
+  );
 };
 
 export default SearchBar;

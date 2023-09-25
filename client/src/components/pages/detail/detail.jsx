@@ -1,23 +1,14 @@
-import Card from './Card';
+import React from "react";
+import Card from "../../card/card";
+import Nav from "../../bars/NavBar";
 
-const Detail = ({ countries, onClose }) => {
-    return (
-        <div>
-            {
-                countries.map(({ id, name, difficulty, duration, season, }) => {
-                    return <Card
-                        id={id}
-                        key={id}
-                        name={name}
-                        difficulty={difficulty}
-                        duration={duration}
-                        season={season}
-                        onClose={onClose}
-                    />
-                })
-            }
-        </div>
-    )
+const Detail = () => {
+  return (
+    <>
+      <Nav/>
+      <Card />
+    </>
+  );
 };
 
 export default Detail;

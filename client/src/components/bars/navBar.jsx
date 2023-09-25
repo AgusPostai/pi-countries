@@ -1,24 +1,21 @@
-import SearchBar from "./searchBar";
-import { Link } from "react-router-dom";
-import "./navBar.css"
+import SearchBar from "./SearchBar";
+import { Link, useLocation } from "react-router-dom";
+import "./NavBar.css";
 
-const Nav = ({ onSearch }) => {
+const Nav = () => {
+    const location = useLocation();
+    const onHome = location.pathname === "/home";
     return (
         <nav className="search-box">
-            <SearchBar onSearch={onSearch} />
-
-            <Link to='/about'>
-                <button>About</button>
-            </Link>
-
-            <NavLink to='/home'>
-                <button>Home</button>
-            </NavLink>
-
-            <NavLink to='/detail'>
-                <button>Detail</button>
-            </NavLink>
+            {onHome && <SearchBar />}
+            <Link to='/activity'><button>Agregar actividad</button></Link>
         </nav>
-    )
+    );
 };
+
 export default Nav;
+
+
+
+
+

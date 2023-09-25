@@ -1,7 +1,13 @@
-.card-list {
-width: 85vw;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-gap: 20px;
+.img-card{
+    width: 200px;
+    border-radius: 100px;
+}
+.container-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    gap: 30px;
+    justify-content: space-between; 
+    margin-left: 200px;
+    margin-right:200px;
 }
