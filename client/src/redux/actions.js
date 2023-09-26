@@ -30,6 +30,7 @@ export const getCountries = () => {
     }
   };
 };
+
 export const getCountriesByName = (name) => {
   return async function (dispatch) {
     try {
@@ -65,10 +66,10 @@ export const getCountriesById = (id) => {
   };
 };
 
-/*
+
 export const getActivities = () => {
   return async function (dispatch) {
-    let json = await axios.get(`${activityurl}/activities`);
+    let json = await axios.get(`http://localhost:3001/countries/activities`);
     const activity = json.data;
     return dispatch({
       type: GET_ACTIVITIES,
@@ -76,24 +77,24 @@ export const getActivities = () => {
     });
   };
 };
-//POST
+
 export const postActivity = (payload) => {
   return async function (dispatch) {
-    const json = await axios.post(`${activityurl}/activities`, payload);
+    const json = await axios.post(`http://localhost:3001/countries/activities`, payload);
     const activity = json.data;
     return dispatch({ type: POST_ACTIVITY, payload: activity });
   };
 };
-//FILTERS
+
 export const filterContinent = (payload) => {
   return { type: FILTER_BY_CONTINENT, payload };
 };
 
-export const filterActivity = (payload) => {
-  return { type: FILTER_BY_ACTIVITY, payload };
-};
+// export const filterActivity = (payload) => {
+//   return { type: FILTER_BY_ACTIVITY, payload };
+// };
 
-//ORDER
+
 
 export const orderName = (payload) => {
   return { type: ORDER_BY_NAME, payload };
@@ -108,5 +109,4 @@ export const getActivitiesByName = (activityName) => {
     payload: activityName,
   };
 };
-*/
-export default getCountries;
+

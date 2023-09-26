@@ -8,7 +8,7 @@ const Filters = () => {
         <option value="Americas"></option>
         <option value="Europe"></option>
         <option value="Asia"></option>
-        <option value=""></option>
+        <option value="Oceania">Oceanía</option>
       </select>
     </div>
   )
