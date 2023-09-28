@@ -12,9 +12,3 @@ router.post("/activities", postActivityHandler)
 
 
 module.exports = router;
-
-
-
-
-
-
