@@ -1,12 +1,17 @@
 const { Router } = require("express");
 const router = Router();
 
-const getActivityHandler = require("../handlers/getActivity");
-const postActivityHandler = require("../handlers/postActivityHandler");
+const postActivityHandler = require("../handlers/Activity/postActivityHandler")
+const getActivitiesHandler = require("../handlers/Activity/getActivityHandler")
+//const getActivitiesByIdHandler = require("../handlers/Activity/getActivityByIdHandler")
 
-router.post("/activity", postActivityHandler)
-router.get("/activity", getActivityHandler)
+router.get("/activities", getActivitiesHandler)
+router.post("/activities", postActivityHandler)
+//router.get("/:id", getActivitiesByIdHandler)
 
+
+
+module.exports = router;
 
 
 

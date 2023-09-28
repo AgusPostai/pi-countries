@@ -1,22 +1,22 @@
-import { Routes, Route} from "react-router-dom";
-import Form from "./components/pages/form/Form"
-import Detail from "./components/pages/detail/Detail"
-import Home from "./components/pages/home/Home"
-import './App.css';
-import LandingPage from "./components/pages/LandingPage";
+import { Route, Routes } from 'react-router-dom'
+import './App.css'
+import { Home, LandingPage, DetailPage, FormActivity, DetailActivity } from "./Pages/index"
 
 
 function App() {
-  return (
-    <div>
-<Routes>    
-        <Route exact path ="/home" element={<Home />}/>
-        <Route path ="/home/:id" element={<Detail />}/>
-        <Route path ="/form" element={<Form />}/>
-        <Route path ="/" element={<LandingPage />}/>
-</Routes>  
-</div>
-  );
-};
 
-export default App;
+
+  return (
+    <div className='App'>
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/country/:id' element={<DetailPage />} />
+        <Route path='/activity/:id' element={<DetailActivity/>}/>
+        <Route path="/form" element={<FormActivity />} />
+      </Routes>
+    </div>
+  )
+}
+
+export default App

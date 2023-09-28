@@ -1,0 +1,15 @@
+ul{
+    list-style: none;
+}
+.btn-back{
+    margin-top: 10px;
+    border: 2px solid #42d691;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    max-width: 190px;
+}
+.letter{
+
+    color:white;
+}

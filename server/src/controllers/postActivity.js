@@ -1,24 +1,27 @@
-const { Activity, Country } = require("../db");
+const { Activity, Country } = require("../../db")
 
-const postActivity = async (name, difficulty, season, countries, duration) => {
-
+const postActivity = async (name, difficulty, duration, season, countries) => {
+    //le vamos a pasar toda la info por query, despue vamos creando y buscando cada variable que necesitamos
     try {
-        const activity = await Activity.create({
+     
+        const newActivity = await Activity.create({
             name,
             difficulty,
-            season,
-            duration
+            duration,
+            season
         })
-        const countries = await Country.findAll({
-            where: { name: countries }
+        const countryInstances = await Country.findAll({
+            where: { name: countries },
         });
-        activity.addCountries(countries);
-        return activity
+        await newActivity.setCountries(countryInstances);
 
-        
-    } catch (error) {
-        console.log(error);
+        return newActivity;
     }
+    catch (error) {
+        console.error("Error al crear la actividad turística:", error);
+        throw error; 
+    }
+
 }
 
-module.exports = { postActivity };
+module.exports = { postActivity }

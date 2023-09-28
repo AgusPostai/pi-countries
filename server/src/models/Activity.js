@@ -1,22 +1,18 @@
-const { DataTypes } = require("sequelize")
-
-
+const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-    sequelize.define(
-        "Activity", {
+    // Define el modelo
+    sequelize.define("Activity", {
         id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false,
         },
-
         name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-
         difficulty: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -25,17 +21,15 @@ module.exports = (sequelize) => {
                 max: 5,
             },
         },
-
         duration: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            allowNull: true,
         },
-
         season: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                isIn: [["Verano", "Otoño", "Invierno", "Primavera"]],
+                isIn: [["Summer", "Autumn", "Winter", "Spring"]],
             },
         },
     }, {

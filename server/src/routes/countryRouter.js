@@ -1,8 +1,8 @@
 const { Router } = require("express");
 const router = Router();
-const getCountriesHandler = require("../handlers/getCountriesHandler"); // Importa el controlador
-const getCountriesByIdHandler = require("../handlers/getCountriesByIdHandler")
-const getCountriesByNameHandler = require("../handlers/getCountriesByNameHandler")
+const getCountriesHandler = require("../handlers/Countries/getCountriesHandler"); // Importa el controlador
+const getCountriesByIdHandler = require("../handlers/Countries/getCountriesByIdHandler")
+const getCountriesByNameHandler = require("../handlers/Countries/getCountriesByNameHandler")
 
 
 

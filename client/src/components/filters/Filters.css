@@ -1,0 +1,21 @@
+.filter-container{
+    display: flex;
+    justify-content: space-evenly;
+    height: 10vh;
+    align-items:  center;
+}
+
+select{
+        border: 2px solid #42d691;
+        border-radius: 10px;
+        padding: 10px 25px;
+        background: black;
+        max-width: 190px;
+}
+option{
+    border: 1px;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: #42d691;
+    max-width: 190px;
+}
