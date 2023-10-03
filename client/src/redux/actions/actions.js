@@ -2,7 +2,7 @@ import axios from "axios"
 import {
     GET_COUNTRIES, FAIL, GET_COUNTRIES_BY_NAME, GET_COUNTRIES_BY_ID,
     POST_ACTIVITY, GET_ACTIVITIES, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITY,
-    ORDER_BY_POPULATION, ORDER_BY_NAME, GET_ACTIVITIES_BY_NAME, GET_ACTIVITIES_BY_ID
+    ORDER_BY_POPULATION, ORDER_BY_NAME, GET_ACTIVITIES_BY_NAME, GET_ACTIVITIES_BY_ID, GET_COUNTRIES_BY_ACTIVITY
 } from "./constants"
 
 const countriesurl = "http://localhost:3001/countries"
@@ -68,6 +68,10 @@ export const getActivities = () => {
         })
     }
 }
+
+export const getCountryByActivity = (payload) => {
+return ({type: GET_COUNTRIES_BY_ACTIVITY, payload})
+    }
 
 //POST
 export const postActivity = (payload) => {

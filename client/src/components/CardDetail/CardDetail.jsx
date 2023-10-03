@@ -27,13 +27,13 @@ const CardDetail = () => {
                         <p>Población: {country.population}</p>
                     </div>
                 </div>
-                <div>
 
+                <div className= "activity-detail">
                     <h3>Actividades:</h3>
                     {country && country.Activities && country.Activities.length > 0 ? (
-                        <ul>
+                        <ul className= "activity-info" >
                             {country.Activities.map((activity) => (
-                                <li key={activity.id}>
+                                <li className='activity-li' key={activity.id}>
                                     <p>Nombre: {activity.name}</p>
                                     <p>Dificultad: {activity.difficulty}</p>
                                     <p>Duracion: {activity.duration} horas</p>

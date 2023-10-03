@@ -2,6 +2,9 @@ const { Activity, Country } = require("../../db")
 
 const postActivity = async (name, difficulty, duration, season, countries) => {
     //le vamos a pasar toda la info por query, despue vamos creando y buscando cada variable que necesitamos
+    if(await Activity.findOne({
+        where : {name: name}
+    }))return "La actividad ya existe"
     try {
      
         const newActivity = await Activity.create({

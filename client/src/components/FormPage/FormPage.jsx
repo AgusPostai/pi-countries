@@ -54,12 +54,19 @@ const Form = () => {
             }))
         }
     }
+
     const handleDuration = (event)=>{
+        if (event.target.value !== 'Select duration' && !form.duration.includes(event.target.value)) {
         setForm({
             ...form,
             duration: event.target.value
         })
+        setErrors(validation({
+            ...form,
+            duration: event.target.value
+         } ))
     }
+}
 
     const handleSeasons = (event) => {
         if (event.target.value !== 'Select season' && !form.season.includes(event.target.value)) {
@@ -162,7 +169,8 @@ const Form = () => {
                     <div className='label'>
                         <label >Duracion en horas </label>
                     </div>
-                   <input  className="input" type="text" onChange={handleDuration} value={form.duration} name="Duracion" placeholder="Ingrese la duracion en horas (1hs)" />                    {errors.duration && <p className='errors'>{errors.duration}</p>}
+                   <input  className="input" type="text" onChange={handleDuration} value={form.duration} name="Duracion" placeholder="Ingrese la duracion en horas (1hs)" />                   
+                    {errors.duration && <p className='errors'>{errors.duration}</p>}
                 </div>
 
                 <div className='input-container'>

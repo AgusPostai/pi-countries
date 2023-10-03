@@ -5,7 +5,6 @@ import { Home, LandingPage, DetailPage, FormActivity, DetailActivity } from "./P
 
 function App() {
 
-
   return (
     <div className='App'>
       <Routes>

@@ -8,7 +8,7 @@ const postActivityHandler = async (req, res) => {
         }
         const createdActivity = await postActivity.postActivity(name, difficulty, duration, season, countries);
        
-        
+        if(createdActivity === "La actividad ya existe") alert("¡Hola..., Soy un mensaje de alerta...!");
         res.status(200).json(createdActivity)
 
 

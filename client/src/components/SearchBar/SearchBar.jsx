@@ -9,6 +9,7 @@ const SearchBar = () => {
     const [input, setInput] = useState("");
     const [searchType, setSearchType] = useState("Countries"); 
 
+
     function changeHandler(e) {
         e.preventDefault();
         const inputValue = e.target.value;

@@ -11,6 +11,28 @@ width: 500px;
     margin-right: 100px
 
 }
+/* .activity-info {
+display:flex;
+justify-content: center;
+border-radius: 50px;
+}
+
+.activity-li{
+  border-radius: 100px;
+  margin-right: 100px
+} */
+
+.activity-info {
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+.activity-li {
+  border-radius: 100px;
+  margin-right: 20px; /* Ajusta el valor de margen derecho según tu preferencia */
+}
+
 
 .country-detail {
     display: flex;
@@ -19,7 +41,6 @@ width: 500px;
     justify-content: center;
   }
   
- 
   .card-info {
     display: flex;
     flex-direction: column;
