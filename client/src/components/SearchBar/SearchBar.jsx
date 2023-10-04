@@ -24,12 +24,10 @@ const SearchBar = () => {
 
     }
    
-
     function handleTypeChange(e) {
         setSearchType(e.target.value);
         setInput(""); 
         dispatch(getCountries())
-        
     }
 
     return (
