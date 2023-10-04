@@ -69,10 +69,6 @@ export const getActivities = () => {
     }
 }
 
-export const getCountryByActivity = (payload) => {
-return ({type: GET_COUNTRIES_BY_ACTIVITY, payload})
-    }
-
 //POST
 export const postActivity = (payload) => {
     return async function (dispatch) {
@@ -112,3 +108,6 @@ export const getActivitiesByName = (activityName) => {
         payload: activityName,
     };
 };
+export const getCountryByActivity = (payload) => {
+    return ({type: GET_COUNTRIES_BY_ACTIVITY, payload})
+        }
